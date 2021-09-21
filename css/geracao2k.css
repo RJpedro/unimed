@@ -1,0 +1,86 @@
+/* limpar formatações padrões */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 1em;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    background: #e6e6e6;
+}
+
+/* layout */
+#area-cabecalho{
+    background-color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+#area-logo, #area-menu{
+    padding: 10px;
+}
+
+#area-principal{
+    width: 920px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+#area-conteudo {
+    width: 920px;
+    float: left;
+}
+
+.conteudo {
+    padding: 20px;
+    margin-bottom: 20px;
+    background: white;
+}
+
+#rodape {
+    clear: both;
+    text-align: center;
+    padding: 15px;
+    background: #CCC;
+}
+
+.coluna {
+    float: left;
+    width: 320px;
+    margin-bottom: 16px;
+    padding: 38px 15px;
+}
+
+.card{
+    box-shadow: 0 5px 10px 0 rgb(0, 0, 0, 0.2);
+    margin: 10px;
+}
+
+.conteudo-membros{
+    padding: 0 16px;
+}
+
+.titulo-membros {
+    color: grey;
+}
+
+/* formatação do menu */
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited{
+    color:  rgb(0, 151, 92);
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+
+.verde{
+    color: rgb(0, 151, 92);
+}
+
