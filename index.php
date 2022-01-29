@@ -33,7 +33,7 @@
                     </p>
 
                     <p class="paragraph-align">
-                        <label for="dataNascimento">Data Nascimento:</label>
+                        <label for="dataNascimento">Idade:</label>
                         <input class="input-style" type="text" name="txt_idade">
                     </p>
 
@@ -69,7 +69,6 @@
                     </div>
                 </form>
             </div>
-
             <div class="conteudo-lateral">
                 <h3>Gerar Relatório</h3>
                 <form action="php/gerar_xml.php" method="POST">

@@ -4,9 +4,11 @@ $nomeCliente=$_POST['txt_nome'];
 $idadeCliente=$_POST['txt_idade'];
 $categoriaPlano=$_POST['planoCategoria'];
 $precoPlano=0;
+$resultado="echo'<script>alert('$precoPlano')</script>'";
 
 function calcular($precoPlano, $idadeCliente){
     global $precoPlano;
+    global $categoriaPlano;
     if($categoriaPlano == 'enfermaria')
     {
         if($idadeCliente > 0 && $idadeCliente <= 18){
@@ -28,7 +30,7 @@ function calcular($precoPlano, $idadeCliente){
             $precoPlano=800.00;
         }
     }
-    else{
+    else {
         if($idadeCliente > 0 && $idadeCliente <= 18){
             $precoPlano=282.00;
         }
@@ -57,11 +59,9 @@ if (isset($_POST['btn_calcular_plano'])) {
     calcular($precoPlano, $idadeCliente);
     try{
         $conecta=new PDO("mysql:host=127.0.0.1;port=3306;dbname=unimed","root","");
-        $conecta->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-
-        $texto="INSERT INTO proposta(nomeCliente,dataAdesao,valorPagar) VALUE('".$nomeCliente."','".$dataAdesao."','".$precoPlano."')";
+        $texto="INSERT INTO proposta(nomeCliente,dataAdesao,totalPagar) VALUE('".$nomeCliente."','".$dataAdesao."','".$precoPlano."')";
         $conecta->exec($texto);
-        echo "Dados gravados com Sucesso...";
+        echo "<script>alert('Dados gravados com sucesso!')</script>";
     }
     catch(PDOException $erro)
     {
@@ -69,4 +69,3 @@ if (isset($_POST['btn_calcular_plano'])) {
     }
 }
  
-?>

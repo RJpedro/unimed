@@ -23,7 +23,7 @@
         <!-- area de conteudo da pagina -->
         <div id="area-conteudo-listagem">
             <!-- abertura do conteudo -->
-            <div class="conteudo">
+            <div class="conteudo-listagem">
                 <form action="#" method="POST">
                     <div class="conteudo-lateral">
                     <h3 class="listagem">Lista de Dependentes</h3>
@@ -43,7 +43,6 @@
                                 if (isset($_POST['btn_listar'])) {
                                     try{
                                         $conecta=new PDO("mysql:host=127.0.0.1;port=3306;dbname=unimed","root","");
-                                        $conecta->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                                         $sql = "SELECT * FROM proposta ORDER BY nomeCliente ASC";
                                         foreach ($conecta->query($sql) as $row) {
                                             echo '<tr>';
@@ -53,9 +52,7 @@
                                             echo "\n";
                                             echo '<td>'. $row['dataAdesao'] . '</td>';
                                             echo "\n";
-                                            echo '<td>'. $row['valorPagar'] . '</td>';
-                                            echo "<br>";
-                                            echo "<br>";
+                                            echo '<td>'. $row['totalPagar'] . '</td>';
                                         } 
                                     }
                                     catch(PDOException $erro){

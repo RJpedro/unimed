@@ -1,10 +1,8 @@
 <?php
-
     if(isset($_POST['btn_gerarXML']))
     {
         try{
             $conecta=new PDO("mysql:host=127.0.0.1;port=3306;dbname=unimed","root","");
-            $conecta->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $dados=$conecta->query("SELECT * FROM proposta");
 
             $xml= new XMLWriter();
@@ -13,7 +11,9 @@
 
             $xml->startElement("proposta");
             foreach($dados as $linha){
-                $xml->startElement("cliente");
+                $xml -> startElement("cliente");
+                // $xml->startElement("proposta");
+                    $xml->writeElement("id",$linha['id']);
                     $xml->writeElement("nomeCliente",$linha['nomeCliente']);
                     $xml->writeElement("dataAdesao",$linha['dataAdesao']);
                     $xml->writeElement("totalPagar",$linha['totalPagar']);
@@ -24,10 +24,11 @@
             fwrite($file,$xml->outputMemory(true));
             fclose($file);
 
-            echo "<h1>Arquivo gravado com Sucesso</h1>";
+            echo "<script>alert('XML gravado com sucesso!')</script>";
+            
         }
         catch(PDOException $erro){
-            echo "Erro de conexão";
+            echo "Erro de conexão $erro";
         }
     }
-    ?>
+?>

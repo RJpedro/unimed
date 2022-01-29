@@ -48,6 +48,11 @@ body {
     margin-bottom: 20px;
     background: white;
 }
+.conteudo-listagem {
+    padding: 20px 20px 20px 139px;
+    margin-bottom: 20px;
+    background: white;
+}
 
 .conteudo-lateral {
     background: white;
@@ -62,17 +67,29 @@ body {
 
 .dependentes-listagem {
     font-size: 20px;
-    padding: 90px;
+    justify-content: center;
 }
 
 table{
+    border-spacing: 2px;
     font-size: 20px;
     text-align: center;
     
 }
+
 thead{
     background-color: rgb(0, 151, 92);
     color: white;
+}
+
+th{
+    padding: 10px;
+}
+
+td{
+    padding: 10px;
+    border: 10px;
+
 }
 
 .button {
@@ -142,16 +159,22 @@ h2 {
     color: #f7b600;
 }
 
+
 h3 {
     color: #fff;
     background: rgb(0, 151, 92);
     padding: 5px;
 }
-.h3.listagem {
+
+.listagem {
     color: #fff;
     background: rgb(0, 151, 92);
-    padding-right: 30px;
+    padding: 10px;
+    padding-left: 235px;
+    margin-left: 2px;
+    width: 378px;
 }
+
 
 .branco{
     color: white;
