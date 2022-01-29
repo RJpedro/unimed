@@ -9,5 +9,5 @@ Antes de mais nada você tem que fazer o download da pasta desse projeto.
 Download da pasta do projeto feito com sucesso? Basta você abrir o phpMyAdmin e fazer a exportação do arquivo "unimed.sql". 
 E por fim você tem que ou colocar a pasta do projeto dentro da pasta "www" (caso esteja usando o wampserver) ou dentro da pasta htdocs (caso esteja usando o xampp).
 
-------------------------------------------------------------Desfrute desse humilde projeto com carinho :)--------------------------------------------------------------------------
+----------------------------------------------------Desfrute desse humilde projeto com carinho :)---------------------------------------------------------------------
 
